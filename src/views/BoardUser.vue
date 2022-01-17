@@ -1,12 +1,12 @@
 <template>
-<div>
-  <HeaderUser/>
-<div>
-  <div class="container">
-    <div class="bg"></div>
+  <div>
+    <HeaderUser />
+    <div class="container">
+      <header class="jumbotron">
+        <h3>{{ content }}</h3>
+      </header>
+    </div>
   </div>
-</div>
-</div>
 </template>
 
 <script>
@@ -16,8 +16,8 @@ import HeaderUser from '../components/HeaderUser.vue';
 export default {
   name: 'User',
   components: {
-        HeaderUser,
-    },
+    HeaderUser
+  },
   data() {
     return {
       content: ''
@@ -30,7 +30,9 @@ export default {
       },
       error => {
         this.content =
-          (error.response && error.response.data && error.response.data.message) ||
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
           error.message ||
           error.toString();
       }
@@ -41,10 +43,10 @@ export default {
 <style>
 .bg {
   position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom:0;
-    background:black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
 }
 </style>
